@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .w-116 {
+        width: 29rem;
+    }
+}
+
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    height: 100%;
+    overflow: auto;
+    background-color: skyblue;
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+}
