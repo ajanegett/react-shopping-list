@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import Item from "./ShopItem.jsx";
 
 function App() {
   const [text, setText] = useState("");
@@ -12,12 +13,13 @@ function App() {
       <h1 className=" block text-3xl p-5">Shopping List</h1>
       <form onSubmit={HandleSubmit}>
         <input
-          className=" shadow-lg p-1 w-72 block"
+          className="  p-1 w-72 block mb-3"
           type="text"
           onChange={e => setText(e.target.value)}
           value={text}
         />
       </form>
+      <Item textValue="aaaa" />
     </div>
   );
 }
