@@ -15,32 +15,28 @@ html {
 body {
   height: 100%;
   overflow: auto;
-  background-color: #10172A;
+  background-color: #10172a;
   display: flex;
   align-items: center;
   padding-bottom: 40px;
 }
 
 .animated-strike {
-  background: linear-gradient(to left, transparent 50%, #42BFF8 50%);
+  background: linear-gradient(to left, transparent 50%, #42bff8 50%);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: 200% 2px; /*Up-down, size*/
 }
-input[type=text] {
+input[type="text"] {
   border: none;
-  border-bottom: 2px solid #42BFF8;
-  background-color: #10172A;
-  color: #42BFF8;
+  border-bottom: 2px solid #42bff8;
+  background-color: #10172a;
+  color: #42bff8;
   caret-color: transparent;
 }
 *:focus {
   outline: none;
 }
-
-
-
-
 
 .prevent-select {
   -webkit-user-select: none; /* Safari */
