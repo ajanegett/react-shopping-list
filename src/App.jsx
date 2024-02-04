@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./index.css";
 import Item from "./ShopItem.jsx";
 
@@ -7,32 +7,17 @@ function App() {
   const [items, setItems] = useState(["example"]);
 
   function HandleSubmit(e) {
-    // the main code will go below...
     e.preventDefault();
     if (text !== "") setItems(() => [...items, text]);
     setText("");
   }
   function deleteItems(e) {
-    console.log(e.target.id);
-    let count = 0;
-    setItems(
-      items
-        .reverse()
-        .filter((x) => {
-          if (x !== e.target.id) return true;
-          let myBool = count === 0 ? false : true;
-          count += 1;
-          return myBool;
-        })
-        .reverse()
+    setItems(() => items.filter((x,index) => !(e.target.id == index)) // works!!
     );
   }
 
   return (
-    <div
-      className="bg-pink-300 flex flex-col items-center border border-stone-950 w-116 p-1"
-      key={"div"}
-    >
+    <div className="bg-pink-300 flex flex-col items-center border border-stone-950 w-116 p-1">
       <h1 className=" block text-3xl p-5">Shopping List</h1>
       <form onSubmit={HandleSubmit}>
         <input
@@ -42,12 +27,14 @@ function App() {
           value={text}
         />
       </form>
-      {items.map((item) => {
+      {
+      items.map((item, index) => {
         return (
           <Item
             textValue={item}
             key={crypto.randomUUID()}
             clickFunction={deleteItems}
+            indexValue = {index}
           />
         );
       })}
