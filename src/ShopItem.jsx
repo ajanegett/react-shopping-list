@@ -8,7 +8,7 @@ export default function Item({ textValue, clickFunction, indexValue, isDone, onD
         className="flex justify-center items-center cursor-pointer"
         onClick={clickFunction}
       >
-        <box-icon className={"trytry"} id={indexValue} name="x"></box-icon>
+        <box-icon color="red" id={indexValue} name="x"></box-icon>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div
-      className="bg-pink-300 flex flex-col items-center border border-stone-950 w-116 p-1"
+      className="bg-[#10172A] flex flex-col items-center w-116 p-1 text-[#42BFF8]"
     >
       <h1 className=" block text-3xl p-5">Shopping List</h1>
       <form onSubmit={HandleSubmit}>
