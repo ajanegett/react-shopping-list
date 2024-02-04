@@ -15,7 +15,7 @@ function App() {
   }
   function DeleteItems(e) {
     setItems(() => items.filter((x,index) => !(e.target.id == index)));
-    setDoneItems(() => doneItems.slice(0,-1)) // ERR // TODO
+    setDoneItems(() => doneItems.filter((x,index) => !(e.target.id == index))) // ERR // TODO
   }
   function DoubleClickHandler(e) {
     // setDoneItems(() => doneItems.map((x,index) => e.target.id == index))
