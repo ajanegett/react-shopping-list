@@ -22,7 +22,7 @@ export default function Item({
         className="flex justify-center items-center cursor-pointer"
         onClick={clickFunction}
       >
-        <box-icon color="red" id={indexValue} name="x"></box-icon>
+        <box-icon color="aqua" id={indexValue} name="trash"></box-icon>
       </div>
     </div>
   );

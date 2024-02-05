@@ -19,6 +19,17 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const input = document.querySelector("input");
+    function focusoninput(e) {
+      input.focus();
+    }
+    window.addEventListener("load", focusoninput)
+    return () => {
+      window.removeEventListener("load", focusoninput)
+    }
+  })
+
   function HandleSubmit(e) {
     e.preventDefault();
     if (text !== "") setItems(() => [...items, text]);
@@ -39,8 +50,8 @@ function App() {
   }
 
   return (
-    <div className="bg-[#10172A] flex flex-col items-center w-116 p-1 text-[#42BFF8]">
-      <h1 className=" block text-3xl p-5">Shopping List</h1>
+    <div className="bg-[#10172A] flex flex-col items-center w-116 p-1 text-[#42BFF8] overflow-y-scroll">
+      <h1 className=" block text-4xl p-5">Shopping List</h1>
       <span className="text-xs">Double click = strike through</span>
       <form onSubmit={HandleSubmit}>
         <input
